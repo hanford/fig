@@ -12,6 +12,8 @@ function createWindow () {
     width: 500,
     height: 300,
     titleBarStyle: 'hidden',
+    vibrancy: 'medium-light',
+    icon: path.join(__dirname, './icon.png'),
     webPreferences: {
       nodeIntegration: true
     }

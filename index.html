@@ -10,6 +10,9 @@
         width: 100%;
         padding: 0;
         margin: 0;
+
+        color: white;
+        /* box-shadow: inset 0px 0px 100px #00000078; */
       }
 
       body {
@@ -21,15 +24,50 @@
         justify-content: center;
         flex-direction: column;
       }
+
+      .loading-icon {
+        animation: spin infinite 1.5s;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
       
     </style>
   </head>
   <body>
-    <h1>Drop a video here!</h1>
 
-    <div style="height: 40px; width: 40px;opacity: 0;" id='loader'>
-      <svg fill="#444;" stroke="#444" viewBox="0 0 64 64"><g stroke-width="4" stroke-linecap="round"><line y1="12" y2="20" transform="translate(32,32) rotate(180)"><animate attributeName="stroke-opacity" dur="750ms" values="1;.85;.7;.65;.55;.45;.35;.25;.15;.1;0;1" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(210)"><animate attributeName="stroke-opacity" dur="750ms" values="0;1;.85;.7;.65;.55;.45;.35;.25;.15;.1;0" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(240)"><animate attributeName="stroke-opacity" dur="750ms" values=".1;0;1;.85;.7;.65;.55;.45;.35;.25;.15;.1" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(270)"><animate attributeName="stroke-opacity" dur="750ms" values=".15;.1;0;1;.85;.7;.65;.55;.45;.35;.25;.15" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(300)"><animate attributeName="stroke-opacity" dur="750ms" values=".25;.15;.1;0;1;.85;.7;.65;.55;.45;.35;.25" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(330)"><animate attributeName="stroke-opacity" dur="750ms" values=".35;.25;.15;.1;0;1;.85;.7;.65;.55;.45;.35" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(0)"><animate attributeName="stroke-opacity" dur="750ms" values=".45;.35;.25;.15;.1;0;1;.85;.7;.65;.55;.45" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(30)"><animate attributeName="stroke-opacity" dur="750ms" values=".55;.45;.35;.25;.15;.1;0;1;.85;.7;.65;.55" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(60)"><animate attributeName="stroke-opacity" dur="750ms" values=".65;.55;.45;.35;.25;.15;.1;0;1;.85;.7;.65" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(90)"><animate attributeName="stroke-opacity" dur="750ms" values=".7;.65;.55;.45;.35;.25;.15;.1;0;1;.85;.7" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(120)"><animate attributeName="stroke-opacity" dur="750ms" values=".85;.7;.65;.55;.45;.35;.25;.15;.1;0;1;.85" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(150)"><animate attributeName="stroke-opacity" dur="750ms" values="1;.85;.7;.65;.55;.45;.35;.25;.15;.1;0;1" repeatCount="indefinite"></animate></line></g></svg>
-    </div>
+    <svg
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      width="100"
+      height="100"
+      id='loader'
+    >
+      <svg
+        fill="#FFF"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+        x="0px"
+        y="0px"
+        viewBox="0 0 100 100"
+        enableBackground="new 0 0 100 100"
+        xmlSpace="preserve"
+        transform="translate(50 50) scale(0.69 0.69) rotate(-45) translate(-50 -50)"
+      >
+        <path
+          fill="#FFF"
+          d="M52.355 19.405l1.992-4.315a1.4 1.4 0 0 0-2.543-1.173L50 17.825l-1.805-3.908a1.401 1.401 0 0 0-2.543 1.173l1.992 4.315C33.228 20.711 21.859 33.87 21.859 49.868c0 9.786 5.147 22.694 16.448 27.909.824.381 1.668.66 2.484.93 1.446.479 2.812.932 3.676 1.844.217.244.644 1.233.926 1.887.949 2.199 2.131 4.935 4.607 4.935 2.476 0 3.656-2.734 4.605-4.931.282-.655.71-1.645.928-1.89.863-.914 2.23-1.366 3.678-1.845.815-.271 1.659-.549 2.484-.93 11.298-5.214 16.444-18.122 16.444-27.909.002-15.998-11.366-29.157-25.784-30.463zm7.77 54.968c-.632.291-1.341.525-2.091.773-1.74.575-3.713 1.229-5.224 2.828-.661.696-1.118 1.755-1.647 2.979-.286.664-.765 1.772-1.162 2.374-.398-.603-.877-1.712-1.164-2.377-.528-1.223-.984-2.28-1.643-2.975-1.515-1.602-3.485-2.254-5.225-2.829-.75-.248-1.458-.482-2.091-.774-9.804-4.524-14.27-15.874-14.27-24.505 0-14.793 10.942-26.828 24.392-26.828 13.448 0 24.39 12.035 24.39 26.828.001 8.632-4.463 19.983-14.265 24.506zM49.942 27.552c-10.936 0-19.833 10.1-19.833 22.513 0 12.412 8.897 22.511 19.833 22.511 10.935 0 19.831-10.099 19.831-22.511 0-12.414-8.896-22.513-19.831-22.513zm0 42.222c-9.392 0-17.032-8.842-17.032-19.71 0-10.869 7.641-19.712 17.032-19.712s17.03 8.843 17.03 19.712c.001 10.869-7.639 19.71-17.03 19.71zm1.497-21.214c.4.4.63.94.63 1.5 0 .561-.229 1.11-.63 1.5-.39.4-.939.63-1.5.63a2.11 2.11 0 0 1-1.5-.63 2.104 2.104 0 0 1-.62-1.5c0-.56.221-1.1.62-1.5.781-.79 2.21-.79 3 0zm0-11.28c.4.399.63.949.63 1.51 0 .56-.229 1.1-.63 1.5-.39.39-.939.62-1.5.62-.56 0-1.109-.23-1.5-.62-.399-.4-.62-.94-.62-1.5 0-.561.221-1.11.62-1.51.781-.79 2.21-.79 3 0zm0 22.56c.4.39.63.94.63 1.5s-.229 1.11-.63 1.5c-.39.4-.939.63-1.5.63a2.11 2.11 0 0 1-1.5-.63c-.399-.39-.62-.94-.62-1.5s.221-1.11.62-1.5c.781-.79 2.21-.79 3 0zm9.851-9.771c0 .561-.23 1.101-.62 1.5-.4.391-.94.62-1.5.62a2.18 2.18 0 0 1-1.51-.62 2.154 2.154 0 0 1-.62-1.5c0-.569.229-1.109.62-1.51.79-.79 2.22-.79 3.01 0 .39.401.62.941.62 1.51zm-19.07 1.5c-.4.391-.95.62-1.5.62-.56 0-1.11-.229-1.51-.62a2.144 2.144 0 0 1-.62-1.51c0-.56.229-1.109.62-1.5.79-.79 2.22-.79 3.01 0 .39.4.62.94.62 1.5 0 .571-.231 1.111-.62 1.51zm12.74-7.979c-.391-.39-.62-.94-.62-1.5s.229-1.11.62-1.5c.79-.79 2.22-.79 3.01 0 .4.39.62.94.62 1.5s-.22 1.11-.62 1.5c-.4.4-.939.63-1.5.63-.571 0-1.111-.23-1.51-.63zM44.92 56.54c.399.39.62.939.62 1.5 0 .56-.221 1.109-.62 1.5-.39.399-.94.62-1.5.62-.561 0-1.11-.221-1.5-.62-.4-.391-.63-.94-.63-1.5 0-.561.229-1.11.63-1.5.78-.8 2.21-.8 3 0zm13.05 0c.4.39.62.939.62 1.5 0 .56-.22 1.109-.62 1.5-.4.399-.939.63-1.5.63-.56 0-1.11-.23-1.51-.63a2.142 2.142 0 0 1-.62-1.5c0-.561.229-1.11.62-1.5.79-.79 2.22-.79 3.01 0zM44.92 40.59c.399.39.62.94.62 1.5s-.221 1.11-.62 1.5c-.39.4-.94.62-1.5.62a2.1 2.1 0 0 1-1.5-.62c-.4-.39-.63-.94-.63-1.5s.229-1.11.63-1.5c.78-.79 2.21-.79 3 0z"
+        />
+      </svg>
+    </svg>
+    
+    
+    <h1 id='copy'>Drag a video here to begin</h1>
 
     <script>
       require('./renderer.js')

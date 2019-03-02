@@ -72,6 +72,7 @@ function fileExists(path) {
 
   var holder = document.body;
   const loader = document.getElementById('loader')
+  const copy = document.getElementById('copy')
 
   holder.ondragover = () => {
     return false;
@@ -88,12 +89,14 @@ function fileExists(path) {
   holder.ondrop = (e) => {
     e.preventDefault();
 
-    loader.style.opacity = 1;
+    loader.classList = 'loading-icon';
+    copy.innerHTML = 'Converting...'
 
     for (let f of e.dataTransfer.files) {
       transform({ inputFilePath: f.path })
         .then(() => {
-          loader.style.opacity = 0;
+          loader.classList = '';
+          copy.innerHTML = 'Drag a video here to begin'
 
         })
     }
