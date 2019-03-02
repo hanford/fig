@@ -1,0 +1,23 @@
+{
+  "name": "fig",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/hanford/fig",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "devDependencies": {
+    "electron": "^4.0.4"
+  },
+  "dependencies": {
+    "ffbinaries": "^1.1.1"
+  }
+}
