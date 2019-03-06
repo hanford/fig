@@ -13,7 +13,7 @@ const ffDest = __dirname + '/binaries';
 function getConversionCommand(inputFilePath, outputFilePath) {
   console.log({inputFilePath,outputFilePath})
   // http://mwholt.blogspot.com/2014/08/convert-video-to-animated-gif-with.html
-  return `ffmpeg -i ${inputFilePath} -r 20 -f image2pipe -vcodec ppm - | convert -layers Optimize - ${outputFilePath}`;
+  return `ffmpeg -i ${inputFilePath} -r 5 -f image2pipe -vcodec ppm - | convert -layers Optimize - ${outputFilePath}`;
 }
 
 function transform({ inputFilePath }) {
